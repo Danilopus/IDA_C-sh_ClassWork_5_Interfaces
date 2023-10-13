@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,8 @@ namespace IDA_C_sh_ClassWork
                 composite_figure_area += figure.Area_;
             return composite_figure_area;
         }
+        public CompositeFigure(): this((int)ServiceFunction.Get_Random(3,10)) { }
+
         public CompositeFigure(int simple_figure_quantuty)
         {
             figure_list = new Simple_N_Angle_Figure[simple_figure_quantuty];

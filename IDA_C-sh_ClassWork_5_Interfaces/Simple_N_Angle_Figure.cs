@@ -27,9 +27,7 @@ namespace IDA_C_sh_ClassWork
             double edge_length = ServiceFunction.Get_Random(5, 10);
             //for (int i = 0; i < Edge_quantity_; i++){ Edge_length_[i] = ServiceFunction.Get_Random(5, 10); }
             for (int i = 0; i < Edge_quantity_; i++) { Edge_length_[i] = edge_length; }
-
-            Area_ = (Math.Pow(edge_length, 2) * Edge_quantity_) / (4 * Math.Abs(Math.Tan(180 / Edge_quantity_)));
-
+            Area_ = (Math.Pow(edge_length, 2) * Edge_quantity_) / (4 * Math.Tan(Math.PI / Edge_quantity_));
             foreach (var item in Edge_length_)
                 Perimeter_ += item;
         }

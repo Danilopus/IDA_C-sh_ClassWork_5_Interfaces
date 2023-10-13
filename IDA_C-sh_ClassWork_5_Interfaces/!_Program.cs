@@ -7,7 +7,7 @@ using System.Text;
 
 
 
-// ClassWork XX : [Interfaces] 11.10.2023 --------------------------------
+// ClassWork 5 : [Interfaces] 11.10.2023 --------------------------------
 
 // Syntax
 /*
@@ -31,8 +31,6 @@ namespace IDA_C_sh_ClassWork
 
             //Task_1();
              Task_2();
-            // Task_3();
-
 
              Console.ReadKey();
 
@@ -49,18 +47,26 @@ namespace IDA_C_sh_ClassWork
         }
         public static void Task_2() 
         {
-        CompositeFigure compositeFigure = new CompositeFigure(3);
+                      
+            //CompositeFigure compositeFigure = new CompositeFigure(3);
+            CompositeFigure compositeFigure = new CompositeFigure();
 
+            Console.WriteLine("\nCompositeFigure consists of {0} figures:", compositeFigure.figure_list.Length);
             for (int i = 0; i < compositeFigure.figure_list.Length; i++) 
             {
-                Console.WriteLine("figure" + i + "\tEdge_quantity -> " + compositeFigure.figure_list[i].Edge_quantity_);
+                Console.WriteLine("figure [" + (i+1) + "]\tEdge quantity -> " + compositeFigure.figure_list[i].Edge_quantity_ + 
+                    "\tArea -> {0}" +
+                    "\tPerimeter -> {1}" +
+                    "\tEdge -> {2}"
+                    , Math.Round(compositeFigure.figure_list[i].Area_, 2)
+                    , Math.Round(compositeFigure.figure_list[i].Perimeter_, 2)
+                    , Math.Round(compositeFigure.figure_list[i].Edge_length_[0], 2));
             }
-            Console.WriteLine("\nCompositeFigure.GetArea -> {0}", compositeFigure.GetArea());
-
+        Console.WriteLine("\nCompositeFigure.GetArea -> {0}", Math.Round(compositeFigure.GetArea(), 2));
 
         }
-        public static void Task_3() { }
 
     } // class Programm
 }// namespace
+
 
